@@ -15,7 +15,7 @@ pipeline {
             steps {
                 gradlew('test')
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-                echo "Username ${params.username}"
+                echo "Username ${params.Username}"
 
             }
         }
