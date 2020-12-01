@@ -1,12 +1,8 @@
 pipeline {
     agent any
 
-//     triggers {
-//         pollSCM('*/5 * * * *')
-//     }
-//     
     parameters {
-            string(name: 'Greeting', defaultValue: 'Hello', description: 'How should I greet the world?')
+            string(name: 'Username', defaultValue: 'Vikram', description: 'Enter your username?')
     }
 
     stages {
@@ -18,18 +14,16 @@ pipeline {
         stage('Unit Tests') {
             steps {
                 gradlew('test')
-            }
-            post {
-                always {
-                    junit '**/build/test-results/test/TEST-*.xml'
-                }
+                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+                echo "Username ${params.username}"
+
             }
         }
 
     }
     post {
         failure {
-            mail to: 'benjamin.muschko@gmail.com', subject: 'Build failed', body: 'Please fix!'
+            mail to: 'vikramsingh001200@gmail.com', subject: 'Build failed', body: 'Please fix!'
         }
     }
 }
