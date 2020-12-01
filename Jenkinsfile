@@ -1,8 +1,12 @@
 pipeline {
     agent any
 
-    triggers {
-        pollSCM('*/5 * * * *')
+//     triggers {
+//         pollSCM('*/5 * * * *')
+//     }
+//     
+    parameters {
+            string(name: 'Greeting', defaultValue: 'Hello', description: 'How should I greet the world?')
     }
 
     stages {
