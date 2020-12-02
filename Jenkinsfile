@@ -6,7 +6,7 @@ pipeline {
     }
 
      environment {
-            username = ${params.Username}
+            username = "${params.Username}"
      }
 
     stages {
