@@ -36,5 +36,5 @@ pipeline {
 }
 
 def gradlew(String... args) {
-    sh "Username=${Username} ./gradlew ${args.join(' ')} -s"
+    sh "./gradlew ${args.join(' ')} -s"
 }
