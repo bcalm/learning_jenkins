@@ -5,6 +5,10 @@ pipeline {
             string(name: 'Username', defaultValue: 'Vikram', description: 'Enter your username?')
     }
 
+     environment {
+            username = ${params.Username}
+     }
+
     stages {
         stage('Compile') {
             steps {
@@ -16,6 +20,7 @@ pipeline {
                 gradlew('test')
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                 echo "Username ${params.Username}"
+                echo "${env.Username}"
 
             }
         }

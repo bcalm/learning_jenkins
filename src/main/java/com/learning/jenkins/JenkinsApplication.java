@@ -1,13 +1,12 @@
 package com.learning.jenkins;
 
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class JenkinsApplication {
-
-	public static void main(String[] args) {
-		SpringApplication.run(JenkinsApplication.class, args);
-	}
-
+    public static void main(String[] args) {
+        String username = System.getProperty("Username");
+        System.out.println(username);
+        System.out.println(System.getenv("username"));
+    }
 }
