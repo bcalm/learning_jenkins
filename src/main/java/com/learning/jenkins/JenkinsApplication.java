@@ -8,5 +8,6 @@ public class JenkinsApplication {
         String username = System.getProperty("Username");
         System.out.println(username);
         System.out.println(System.getenv("username"));
+        System.out.println(System.getenv());
     }
 }

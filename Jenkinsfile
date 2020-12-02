@@ -7,6 +7,8 @@ pipeline {
 
      environment {
             username = "${params.Username}"
+            DB_ENGINE    = "sqlite"
+
      }
 
     stages {
