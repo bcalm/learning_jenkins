@@ -8,7 +8,6 @@ pipeline {
      environment {
             username = "${params.Username}"
             DB_ENGINE    = "sqlite"
-
      }
 
     stages {
@@ -23,6 +22,7 @@ pipeline {
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                 echo "Username ${params.Username}"
                 echo "${env.Username}"
+                echo "${env}"
 
             }
         }
